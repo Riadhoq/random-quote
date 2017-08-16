@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var i = 0;
   var y = 0;
-  y = Math.floor(Math.random() * 11);
+  y = Math.floor(Math.random() * 10);
   
   var quoteText = "";
 
