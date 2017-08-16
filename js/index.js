@@ -1,16 +1,19 @@
 $(document).ready(function() {
   var i = 0;
+  var y = 0;
+  y = Math.floor(Math.random() * 11);
+  
   var quoteText = "";
 
   $.getJSON(
     "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=42&callback=",
     function(json) {
-      quoteText = json[0].content;
+      quoteText = json[y].content;
       $("#quote").html(
         "<p><i class='fa fa-quote-left fa-2x fa-pull-left fa-border' aria-hidden='true'></i>" +
-          json[0].content +
+          json[y].content +
           "</p><p>&mdash;" +
-          json[0].title +
+          json[y].title +
           "</p>" +
           "</div>"
       );
@@ -65,13 +68,13 @@ $(document).ready(function() {
         i +
         "&callback=",
       function(json) {
-        quoteText = json[0].content;
+        quoteText = json[y].content;
 
         $("#quote").html(
           "<p><i class='fa fa-quote-left fa-2x fa-pull-left fa-border' aria-hidden='true'></i>" +
-            json[0].content +
+            json[y].content +
             "</p><p>&mdash;" +
-            json[0].title +
+            json[y].title +
             "</p>" +
             "</div>"
         );
