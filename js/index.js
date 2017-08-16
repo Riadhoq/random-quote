@@ -6,7 +6,7 @@ $(document).ready(function() {
   var quoteText = "";
 
   $.getJSON(
-    "https://crossorigin.me/https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=42&callback=",
+    "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=42&callback=",
     function(json) {
       quoteText = json[y].content;
       $("#quote").html(
@@ -64,7 +64,7 @@ $(document).ready(function() {
 
     $("#quote").css({ color: randColor, transition: "1s ease" });
     $.getJSON(
-      "https://crossorigin.me/https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=" +
+      "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=" +
         i +
         "&callback=",
       function(json) {
