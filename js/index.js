@@ -5,7 +5,7 @@ $(document).ready(function() {
   
   var quoteText = "";
 
-  $.getJSON(
+  $.get(
     "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=42&callback=",
     function(json) {
       quoteText = json[y].content;
@@ -63,7 +63,7 @@ $(document).ready(function() {
     $("body").css({ "background-color": randColor, transition: "1s ease"});
 
     $("#quote").css({ color: randColor, transition: "1s ease" });
-    $.getJSON(
+    $.get(
       "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=" +
         i +
         "&callback=",
